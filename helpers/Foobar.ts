@@ -1,20 +1,15 @@
 import {all, create} from 'mathjs'
 
 const config = {}
+const math = create(all, config);
 
 
 export default class Foobar {
-    private math;
-
-    constructor() {
-        this.math = create(all, config)
-    }
-
-    evaluate(mathExpression: string, precision: number | null = null) {
-        let resultNode = this.math.evaluate(mathExpression);
+    static evaluate(mathExpression: string, precision: number | null = null) {
+        let resultNode = math.evaluate(mathExpression);
 
         if (precision) {
-            resultNode = this.math.format(resultNode, precision);
+            resultNode = math.format(resultNode, precision);
         }
 
         return resultNode.toString();
