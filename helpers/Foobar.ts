@@ -15,6 +15,6 @@ export default class Foobar {
     }
 
     evaluate(mathExpression: string) {
-        return this.math.evaluate(mathExpression);
+        return this.math.evaluate(mathExpression).toString();
     }
 }

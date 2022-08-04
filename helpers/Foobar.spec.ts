@@ -12,12 +12,12 @@ describe('Foobar', () => {
     it('can evaluate expressions', () => {
         const mathExpression = "3*2";
 
-        expect((new Foobar()).evaluate(mathExpression)).toEqual(6);
+        expect((new Foobar()).evaluate(mathExpression)).toEqual("6");
     });
 
     it('can evaluate expressions with complex numbers', () => {
         const mathExpression = "i*i*i";
 
-        expect((new Foobar()).evaluate(mathExpression)).toEqual({im: -1, re: -0});
+        expect((new Foobar()).evaluate(mathExpression)).toEqual("-i");
     });
 });
