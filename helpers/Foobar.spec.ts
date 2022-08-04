@@ -9,15 +9,16 @@ describe('Foobar', () => {
         expect((new Foobar()).squareRoot(-4)).toEqual({im: 2, re: 0});
     });
 
-    it('can evaluate expressions', () => {
-        const mathExpression = "3*2";
-
-        expect((new Foobar()).evaluate(mathExpression)).toEqual("6");
+    test.each([
+        ['sqrt(3^2 + 4^2)', '5'],
+        ['sqrt(-4)', '2i'],
+        ['2 inch to cm', '5.08 cm'],
+        ['cos(45 deg)', '0.7071067811865476'],
+        ['3*2', '6'],
+        ['i*i*i', '-i']
+    ])('can evaluate (%s)', (a, expected) => {
+        expect(new Foobar().evaluate(a)).toEqual(expected);
     });
 
-    it('can evaluate expressions with complex numbers', () => {
-        const mathExpression = "i*i*i";
 
-        expect((new Foobar()).evaluate(mathExpression)).toEqual("-i");
-    });
 });
