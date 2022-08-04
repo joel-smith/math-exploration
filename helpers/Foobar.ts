@@ -1,5 +1,6 @@
-import { create, all } from 'mathjs'
-const config = { }
+import {all, create} from 'mathjs'
+
+const config = {}
 
 
 export default class Foobar {
@@ -13,4 +14,7 @@ export default class Foobar {
         return this.math.sqrt(input);
     }
 
+    evaluate(mathExpression: string) {
+        return this.math.evaluate(mathExpression);
+    }
 }
