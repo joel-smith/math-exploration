@@ -10,10 +10,6 @@ export default class Foobar {
         this.math = create(all, config)
     }
 
-    squareRoot(input: number): any {
-        return this.math.sqrt(input);
-    }
-
     evaluate(mathExpression: string, precision: number | null = null) {
         let resultNode = this.math.evaluate(mathExpression);
 
