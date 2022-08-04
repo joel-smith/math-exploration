@@ -4,7 +4,7 @@ const config = {}
 const math = create(all, config);
 
 
-export default class Foobar {
+export default class Calculator {
     static evaluate(mathExpression: string, precision: number | null = null) {
         let resultNode = math.evaluate(mathExpression);
 
