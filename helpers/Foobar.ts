@@ -14,7 +14,13 @@ export default class Foobar {
         return this.math.sqrt(input);
     }
 
-    evaluate(mathExpression: string) {
-        return this.math.evaluate(mathExpression).toString();
+    evaluate(mathExpression: string, precision: number | null = null) {
+        let resultNode = this.math.evaluate(mathExpression);
+
+        if (precision) {
+            resultNode = this.math.format(resultNode, precision);
+        }
+
+        return resultNode.toString();
     }
 }

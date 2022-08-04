@@ -20,5 +20,7 @@ describe('Foobar', () => {
         expect(new Foobar().evaluate(a)).toEqual(expected);
     });
 
-
+    it('Evaluates functions with specified levels of precision', () => {
+        expect(new Foobar().evaluate('cos(45 deg)', 1)).toEqual('0.7');
+    })
 });
